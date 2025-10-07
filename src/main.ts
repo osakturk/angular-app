@@ -5,5 +5,3 @@ import { Header } from './app/header/header';
 
 bootstrapApplication(App, appConfig)
   .catch((err) => console.error(err));
-
-bootstrapApplication(Header)
