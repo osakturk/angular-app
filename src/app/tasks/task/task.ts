@@ -9,10 +9,15 @@ import { type TaskData } from './task.model';
 export class Task {
   @Input({required: true}) taskData!: TaskData;
   @Output() complete = new EventEmitter();
+  @Output() addTask = new EventEmitter()
 
 
   onCompleteTask(){
     this.complete.emit(this.taskData.id);
+  }
+
+  onAddTask(){
+    this.addTask.emit(this.taskData)
   }
 
 }

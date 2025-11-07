@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Task } from "./task/task";
+import { NewTask } from './new-task/new-task';
 
 @Component({
   selector: 'app-tasks',
-  imports: [Task],
+  imports: [Task, NewTask],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css'
 })
@@ -11,6 +12,7 @@ export class Tasks {
   @Input({required: true}) userId!: string
   @Input() name?: string;
   // you can set as undefined type if you don't wanna use question mark with or (|) operation
+  isAddingTask = false;
   tasks = [
     {
       id: 't1',
@@ -38,11 +40,19 @@ export class Tasks {
   ]
 
   get selectedUserTasks(){
-    return this.tasks.filter((task) => task.userId === this.userId)
+    return this.tasks.filter((task) => task.userId === this.userId);
   }
 
   onCompleteTask(id: string){
-    this.tasks = this.tasks.filter((task) => task.id !== id)
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+
+  onStartAddTask(){
+    this.isAddingTask = true;
+  }
+
+  onCancelTask(){
+    this.isAddingTask = false;
   }
 
 }
