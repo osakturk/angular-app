@@ -6,10 +6,10 @@ import { TasksService } from '../tasks.service';
 @Component({
   selector: 'app-task',
   imports: [Card, DatePipe],
-  templateUrl: './task.html',
-  styleUrl: './task.css',
+  templateUrl: './task.component.html',
+  styleUrl: './task.component.css',
 })
-export class Task {
+export class TaskComponent {
   @Input({required: true}) taskData!: TaskData;
   private tasksService = inject(TasksService)
 

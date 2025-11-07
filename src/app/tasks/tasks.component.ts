@@ -1,16 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { Task } from "./task/task";
-import { NewTask } from './new-task/new-task';
-import { NewTaskData } from './new-task/new-task.model';
+import { TaskComponent } from "./task/task.component";
+import { NewTaskComponent } from './new-task/new-task.component';
 import { TasksService } from './tasks.service';
+
 
 @Component({
   selector: 'app-tasks',
-  imports: [Task, NewTask],
-  templateUrl: './tasks.html',
-  styleUrl: './tasks.css'
+  imports: [TaskComponent, NewTaskComponent],
+  templateUrl: './tasks.component.html',
+  styleUrl: './tasks.component.css'
 })
-export class Tasks {
+export class TasksComponent {
   @Input({required: true}) userId!: string
   @Input() name?: string;
   // you can set as undefined type if you don't wanna use question mark with or (|) operation

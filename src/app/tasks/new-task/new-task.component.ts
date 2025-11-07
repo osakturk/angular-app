@@ -5,10 +5,10 @@ import { TasksService } from '../tasks.service';
 @Component({
   selector: 'app-new-task',
   imports: [FormsModule],
-  templateUrl: './new-task.html',
-  styleUrl: './new-task.css',
+  templateUrl: './new-task.component.html',
+  styleUrl: './new-task.component.css',
 })
-export class NewTask {
+export class NewTaskComponent {
   @Input({required: true}) userId!: string
   @Output() close = new EventEmitter()
   enteredTitle = '';
