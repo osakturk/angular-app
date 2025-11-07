@@ -20,6 +20,7 @@ export class App {
   }
 
   onSelectUser(id: string) {
+    // this has the emitted result by user component
     this.selectedUserId = id
   }
 }
