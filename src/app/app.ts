@@ -3,11 +3,10 @@ import { Header } from './header/header';
 import { User } from './user/user';
 import { Tasks } from './tasks/tasks';
 import { DUMMY_USERS } from './dummy-users';
-import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, User, Tasks, NgFor, NgIf],
+  imports: [Header, User, Tasks],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
