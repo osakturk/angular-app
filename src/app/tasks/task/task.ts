@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { type TaskData } from './task.model';
+import { NewTaskData } from '../new-task/new-task.model';
 @Component({
   selector: 'app-task',
   imports: [],
@@ -14,10 +15,6 @@ export class Task {
 
   onCompleteTask(){
     this.complete.emit(this.taskData.id);
-  }
-
-  onAddTask(){
-    this.addTask.emit(this.taskData)
   }
 
 }
