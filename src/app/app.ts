@@ -13,7 +13,7 @@ import { DUMMY_USERS } from './dummy-users';
 export class App {
   protected readonly title = signal('first-angular-app');
   users = DUMMY_USERS;
-  selectedUserId = 'u1'
+  selectedUserId?: string;
   
   get selectedUser(){
     return DUMMY_USERS.find((user) => user.id === this.selectedUserId)
