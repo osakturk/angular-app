@@ -7,12 +7,11 @@
         </button>
     </menu>
     </header>
-    <ul>
-        @for (task of selectedUserTask; track task.id) {
-            <li>
-                <app-task/>
-            </li>
+        @for (task of selectedUserTasks; track task.id) {
+            <ul>
+                <li>
+                    <app-task [taskData]="task"/>
+                </li>
+            </ul>
         }
-    </ul>
-        
 </section>
